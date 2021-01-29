@@ -1,16 +1,22 @@
 <div class='row'>
     <app-button (onClick)='clickHandler()' [label]='label'></app-button>
-    <div>
-        <div *ngIf="showUsers && !showRepo" class=col>
+
+    <div *ngIf="showUsers && !showRepo" class='col'>
+        <div *ngIf='isLoading'>
+            <app-loader></app-loader>
+        </div>
+        <div *ngIf='!isLoading'>
             <app-users>
                 true
             </app-users>
         </div>
-        <div *ngIf="!showUsers && showRepo" class=col>
-            <app-repos>
-                false
-            </app-repos>
-        </div>
     </div>
+    <div *ngIf="!showUsers && showRepo" class='col'>
+        <app-repos>
+            false
+        </app-repos>
+    </div>
+
+
 
 </div>

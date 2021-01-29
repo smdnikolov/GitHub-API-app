@@ -1,12 +1,15 @@
 .btn {
     margin: 10px;
-    background-color: #ffc107;;
-    border-color: #ffc107;;
-    width:100px;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    width: 100px;
 }
-.btn:hover {
-    opacity: 0.5;
+@media (hover: hover) {
+    .btn:hover {
+        opacity: 0.5;
+    }
 }
+
 .btn-focus,
 .btn-primary:focus {
     outline: none;
@@ -18,6 +21,6 @@
 .btn-primary:active,
 .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #ffc107;;
-    border-color: #ffc107;;
+    background-color: #ffc107;
+    border-color: #ffc107;
 }

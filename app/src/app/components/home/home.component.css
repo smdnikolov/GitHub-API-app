@@ -3,6 +3,7 @@
     border-radius: 10px;
     border:#ffc107 2px solid;
     background:rgb(0 0 0 / 8%);
+    min-height: 500px;
 }
 .row {
     text-align: center;
