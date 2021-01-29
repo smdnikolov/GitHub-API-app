@@ -6,9 +6,7 @@
             <app-loader></app-loader>
         </div>
         <div *ngIf='!isLoading'>
-            <app-users>
-                true
-            </app-users>
+            <app-users [users]='users'></app-users>
         </div>
     </div>
     <div *ngIf="!showUsers && showRepo" class='col'>

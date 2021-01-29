@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 
 @Component({
@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.css'],
 
 })
-export class UsersComponent implements OnInit {
-  constructor() { }
 
-  label = "Get Users"
+export class UsersComponent implements OnInit {
+  @Input() users: any;
+
+  constructor() { }
 
   ngOnInit(): void {
   }

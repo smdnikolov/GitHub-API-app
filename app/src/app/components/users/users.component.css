@@ -1,3 +1,23 @@
 .users-col {
    min-height: 500px;
-  }
+}
+
+.jumbotron {
+
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+.card{
+   margin: 30px 10px 5px 10px;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+   .jumbotron {
+      display: inline-block !important;
+      justify-content: space-between;
+   }
+
+   .card {
+      flex: 0 1 calc(25% - 1em);
+   }
+}
