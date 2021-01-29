@@ -2,6 +2,7 @@
     margin: 10px;
     background-color: #ffc107;;
     border-color: #ffc107;;
+    width:100px;
 }
 .btn:hover {
     opacity: 0.5;

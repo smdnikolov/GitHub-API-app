@@ -9,12 +9,6 @@ export class ReposComponent implements OnInit {
 
   constructor() { }
 
-  label = 'Get Repos'
-
-  reposHandler() {
-    console.log('clicked from repos')
-  }
-
   ngOnInit(): void {
   }
 

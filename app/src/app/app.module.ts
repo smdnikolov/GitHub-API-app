@@ -6,12 +6,14 @@ import { CoreModule } from './core/core.module'
 import { SharedModule } from './shared/shared.module';
 import { UsersComponent } from './components/users/users.component';
 import { ReposComponent } from './components/repos/repos.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     ReposComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

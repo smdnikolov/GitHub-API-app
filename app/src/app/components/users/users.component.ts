@@ -12,10 +12,6 @@ export class UsersComponent implements OnInit {
 
   label = "Get Users"
 
-  usersHandler() {
-    console.log('clicked from users')
-  }
-
   ngOnInit(): void {
   }
 

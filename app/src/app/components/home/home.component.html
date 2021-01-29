@@ -1,0 +1,16 @@
+<div class='row'>
+    <app-button (onClick)='clickHandler()' [label]='label'></app-button>
+    <div>
+        <div *ngIf="showUsers && !showRepo" class=col>
+            <app-users>
+                true
+            </app-users>
+        </div>
+        <div *ngIf="!showUsers && showRepo" class=col>
+            <app-repos>
+                false
+            </app-repos>
+        </div>
+    </div>
+
+</div>
