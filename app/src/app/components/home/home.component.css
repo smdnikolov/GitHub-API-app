@@ -1,10 +1,15 @@
-.col{
+.col {
     text-align: center;
     border-radius: 10px;
-    border:#ffc107 2px solid;
-    background:rgb(0 0 0 / 8%);
+    border: #ffc107 2px solid;
+    background: rgb(0 0 0 / 8%);
     min-height: 500px;
 }
 .row {
     text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    img {
+        width: 95%;
+    }
 }
