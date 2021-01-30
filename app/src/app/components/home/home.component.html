@@ -5,10 +5,12 @@
             (sendRepos)="interceptRepos($event)">
         </app-users>
     </div>
-    <div  [ngStyle]="{'display': (showRepos === true) ? 'inline' : 'none'}">
+    <div [ngStyle]="{'display': (showRepos === true) ? 'inline' : 'none'}">
         <app-repos [isLoading]='reposLoading' [repos]='repos'>
         </app-repos>
     </div>
-
+    <div *ngIf='!showUsers && !showRepos'>
+       <img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'>
+    </div>
 
 </div>

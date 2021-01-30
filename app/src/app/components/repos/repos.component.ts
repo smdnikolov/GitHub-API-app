@@ -12,14 +12,13 @@ export class ReposComponent implements OnInit {
 
   @Input() repos: any;
   @Input() isLoading: any;
-
-
+  
   ngOnInit(): void {
-    
+
   }
 
 
-  log(){
+  log() {
     console.log(this.isLoading)
     console.log(this.repos.length)
   }

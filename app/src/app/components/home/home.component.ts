@@ -54,7 +54,6 @@ export class HomeComponent implements OnInit {
     this.repos = data;
     this.users = []
     this.reposLoading = false;
-
   }
 
   ngOnInit(): void {

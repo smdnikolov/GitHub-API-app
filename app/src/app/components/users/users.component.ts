@@ -32,6 +32,7 @@ export class UsersComponent implements OnInit {
   getRepos(user: string) {
 
     this.restApiService.getRepos(user).subscribe((data: any) => {
+      data.user=user;
       this.sendRepos.emit(data)
     })
   }

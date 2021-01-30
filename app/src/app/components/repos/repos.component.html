@@ -1,9 +1,29 @@
 <div *ngIf='isLoading'>
     <app-loader></app-loader>
 </div>
-<div *ngIf='repos.length && !isLoading'>
-    Repos!
+<div *ngIf='repos.length>1 && !isLoading'>
+    <h1>{{repos.user}}'s repos</h1>
+    <div class="jumbotron">
+        <div *ngFor="let repo of repos">
+            <div class="card" style="width:200px;height: 250px;">
+                <img class="card-img-top"
+                    src='https://softwareengineering101com.files.wordpress.com/2018/01/kate-semizhon-resume.png'
+                    alt="Card image">
+                <div class="card-body">
+                    <p style='font-size: 15px;font-weight: bolder;height: 50px;' class="card-title">{{repo.name}}</p>
+                    <div class="card-text">
+                        <a target="blank" href={{repo.html_url}}>Check on GitHub</a>
+                        <div style='font-size:10px;margin-top: 10px;'>
+                            <p>Created at {{repo.created_at | date}}</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div class='repos-col' id='no-repos' *ngIf='!repos.length && !isLoading'>
-    The user has no repos !
+<div id='no-repos' *ngIf='repos.length<2 && !isLoading'>
+    <img src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-2506.jpg?size=626&ext=jpg" alt="No repos have been found " width="500" height="400">
+    <h1>{{repos.user}} has no repos.</h1>
 </div>

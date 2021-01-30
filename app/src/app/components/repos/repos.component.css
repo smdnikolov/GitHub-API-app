@@ -1,3 +1,31 @@
 .repos-col {
   height: 500px;
+  background: aliceblue;
+}
+.jumbotron {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+.card {
+  margin-top: 20px;
+  margin-left: 20px;
+  background: aliceblue;
+}
+.card-text {
+  height: fit-content;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .jumbotron {
+    display: inline-block !important;
+    justify-content: center;
+  }
+
+  .card {
+    flex: 0 1 calc(25% - 1em);
+  }
+}
+img {
+  padding: 20px;
 }

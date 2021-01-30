@@ -10,11 +10,10 @@
         <div class="card-body">
           <h4 class="card-title">{{user.login}}</h4>
           <p class="card-text">
-            <a href={{user.html_url}}>Check on GitHub</a>
+            <a target="blank" href={{user.html_url}}>Check on GitHub</a>
           </p>
           <app-button (click)='emitLoading()' (onClick)='getRepos(user.login)' [label]='label'></app-button>
         </div>
       </div>
     </div>
-
   </div>
