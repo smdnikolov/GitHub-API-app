@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { RestApiService } from '../../core/api.service'
 import { User } from '../../core/user'
 
@@ -12,38 +12,53 @@ export class HomeComponent implements OnInit {
   constructor(public restApiService: RestApiService) { }
 
   users: User[] = [];
-
+  repos = [];
+  showRepos = false;
   showUsers = false;
-  showRepo = false;
   label = 'Get Users'
-  isLoading = true;
-
+  isLoading = false;
+  reposLoading = false;
 
   clickHandler() {
 
     if (this.label === 'Get Users') {
+      this.showUsers = true;
+      this.isLoading = true;
       this.restApiService.getUsers().subscribe((data: any) => {
         this.users = data;
-        console.log(this.users)
         this.isLoading = false;
       })
+      this.label = 'Back'
+    } else if (this.label === 'Back' && this.showRepos) {
+      this.showRepos = false;
       this.showUsers = true;
-      this.showRepo = false;
-      this.label = 'Back'
-    } else if (this.label === 'Get Repos') {
-      this.showUsers = false;
-      this.showRepo = true;
-      this.label = 'Back'
-    } else {
-      this.users = []
       this.isLoading = true;
+      this.restApiService.getUsers().subscribe((data: any) => {
+        this.users = data;
+        this.isLoading = false;
+      })
+      this.label = 'Back'
+    } else if (this.label === 'Back' && this.showUsers) {
       this.showUsers = false;
-      this.showRepo = false;
       this.label = 'Get Users'
     }
+  }
+
+  interceptLoading(data: any) {
+    this.showUsers = false;
+    this.showRepos = true;
+    this.reposLoading = true;
+  }
+
+  interceptRepos(data: any) {
+    this.repos = data;
+    this.users = []
+    this.reposLoading = false;
 
   }
 
   ngOnInit(): void {
   }
+
+
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { RestApiService } from '../../core/api.service'
 
 
 @Component({
@@ -9,11 +10,30 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 
 export class UsersComponent implements OnInit {
-  @Input() users: any;
 
-  constructor() { }
+  @Input() users: any;
+  @Input() isLoading: any;
+  @Output() sendRepos = new EventEmitter<any>();
+  @Output() sendLoading = new EventEmitter<any>();
+
+
+  label = 'See Repos'
+
+
+  constructor(public restApiService: RestApiService) { }
 
   ngOnInit(): void {
+  }
+
+  emitLoading() {
+    this.sendLoading.emit(true)
+  }
+
+  getRepos(user: string) {
+
+    this.restApiService.getRepos(user).subscribe((data: any) => {
+      this.sendRepos.emit(data)
+    })
   }
 
 }

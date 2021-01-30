@@ -1,20 +1,14 @@
 <div class='row'>
     <app-button (onClick)='clickHandler()' [label]='label'></app-button>
-
-    <div *ngIf="showUsers && !showRepo" class='col'>
-        <div *ngIf='isLoading'>
-            <app-loader></app-loader>
-        </div>
-        <div *ngIf='!isLoading'>
-            <app-users [users]='users'></app-users>
-        </div>
+    <div [ngStyle]="{'display': (showUsers === true) ? 'inline-block' : 'none'}">
+        <app-users [isLoading]='isLoading' [users]='users' (sendLoading)='interceptLoading($event)'
+            (sendRepos)="interceptRepos($event)">
+        </app-users>
     </div>
-    <div *ngIf="!showUsers && showRepo" class='col'>
-        <app-repos>
-            false
+    <div  [ngStyle]="{'display': (showRepos === true) ? 'inline' : 'none'}">
+        <app-repos [isLoading]='reposLoading' [repos]='repos'>
         </app-repos>
     </div>
-
 
 
 </div>

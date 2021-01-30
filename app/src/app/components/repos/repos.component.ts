@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-repos',
@@ -9,7 +9,19 @@ export class ReposComponent implements OnInit {
 
   constructor() { }
 
+
+  @Input() repos: any;
+  @Input() isLoading: any;
+
+
   ngOnInit(): void {
+    
+  }
+
+
+  log(){
+    console.log(this.isLoading)
+    console.log(this.repos.length)
   }
 
 }

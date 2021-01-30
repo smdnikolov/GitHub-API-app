@@ -30,6 +30,13 @@ export class RestApiService {
                 catchError(this.handleError)
             )
     }
+    getRepos(user: string): Observable<User> {
+        return this.http.get<any>(this.apiURL + 'users/' + `${user}/repos`)
+            .pipe(
+                retry(1),
+                catchError(this.handleError)
+            )
+    }
 
     // Error handling 
     handleError(error: any) {

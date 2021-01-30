@@ -1,3 +1,9 @@
-<div class="repos-col">
-    repos
+<div *ngIf='isLoading'>
+    <app-loader></app-loader>
+</div>
+<div *ngIf='repos.length && !isLoading'>
+    Repos!
+</div>
+<div class='repos-col' id='no-repos' *ngIf='!repos.length && !isLoading'>
+    The user has no repos !
 </div>

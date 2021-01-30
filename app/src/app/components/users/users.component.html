@@ -1,17 +1,18 @@
-<div class='users-col'>
+<div *ngIf='isLoading'>
+  <app-loader></app-loader>
+</div>
 
+<div class='users-col'>
   <div class="jumbotron" *ngIf="users">
-    <div *ngFor="let user of users" >
+    <div *ngFor="let user of users">
       <div class="card" style="width:200px">
         <img class="card-img-top" src={{user.avatar_url}} alt="Card image">
         <div class="card-body">
           <h4 class="card-title">{{user.login}}</h4>
           <p class="card-text">
-
             <a href={{user.html_url}}>Check on GitHub</a>
           </p>
-
-          <a href="#" class="btn btn-primary">See Repos</a>
+          <app-button (click)='emitLoading()' (onClick)='getRepos(user.login)' [label]='label'></app-button>
         </div>
       </div>
     </div>

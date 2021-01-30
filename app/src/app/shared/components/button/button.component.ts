@@ -12,8 +12,6 @@ export class ButtonComponent implements OnInit {
   @Input() label: any;
   @Output() onClick = new EventEmitter<any>();
 
-
-
   constructor() {
 
   }
